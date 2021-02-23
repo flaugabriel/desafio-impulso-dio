@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Transações</h5>
+    <h6 class="card-subtitle text-muted">Documentação sobre os tipos das transações
+    </h6>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Descrição</th>
+        <th>Natureza</th>
+        <th>Sinal</th>
+        <th colspan="3">Ação</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @deals.each do |deal| %>
+      <tr>
+        <td><%= deal.type_transaction %></td>
+        <td><%= deal.description %></td>
+        <td><%= deal.nature %></td>
+        <td><%= deal.signal %></td>
+        <td>
+          <%= link_to '
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 align-middle"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+          '.html_safe, edit_deal_path(deal) %>
+          <%= link_to '
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash align-middle"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+          '.html_safe, deal, method: :delete, data: { confirm: 'Tem certeza' } %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

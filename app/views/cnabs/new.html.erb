@@ -1,0 +1,27 @@
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">Importação de CNAB</h5>
+      <h6 class="card-subtitle text-muted">Abaixo voçê pode importa arquivos CNAB no formato ".txt" ao enviar o sistema ira normalizar, todos eles e salvar, de acordo com a tabela de <a href='/transactions'>transações.</a></h6>
+    </div>
+    <div class="card-body">
+      <%= form_tag(import_cnabs_path, local: true, multipart: true) do %>
+      <div class="form-group">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label class='form-label w-100'>Selecionar arquivo</label>
+            <%= file_field_tag :file, class:'file-input' %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= button_tag(type: "submit", class: "btn btn-success") do %>
+            Carregar
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

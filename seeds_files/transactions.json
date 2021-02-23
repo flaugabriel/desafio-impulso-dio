@@ -1,0 +1,58 @@
+{
+  "transactions": [
+    {
+      "type_transaction":1,
+      "description":"Débito",
+      "nature": "Entrada",
+      "signal": "+"
+    },
+    {
+      "type_transaction":2,
+      "description":"Boleto",
+      "nature": "Saída",
+      "signal": "-"
+    },
+    {
+      "type_transaction":3,
+      "description":"Financiamento",
+      "nature": "Saída",
+      "signal": "-"
+    },
+    {
+      "type_transaction":4,
+      "description":"Crédito",
+      "nature": "Entrada",
+      "signal": "+"
+    },
+    {
+      "type_transaction":5,
+      "description":"Recebimento Empréstimo",
+      "nature": "Entrada",
+      "signal": "+"
+    },
+    {
+      "type_transaction":6,
+      "description":"Vendas",
+      "nature": "Entrada",
+      "signal": "+"
+    },
+    {
+      "type_transaction":7,
+      "description":"Recebimento TED",
+      "nature": "Entrada",
+      "signal": "+"
+    },
+    {
+      "type_transaction":8,
+      "description":"Recebimento DOC Entrada",
+      "nature": "Entrada",
+      "signal": "+"
+    },
+    {
+      "type_transaction":9,
+      "description":"Aluguel",
+      "nature": "Saída",
+      "signal": "-"
+    }
+  ]
+}

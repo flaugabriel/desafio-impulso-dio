@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Listagem de cnabs</h5>
+    <h6 class="card-subtitle text-muted">Abaixo mostra a normalização de movimentações finanaceira de lojas
+    </h6>
+    <br>
+    <% if @cnabs.present? %>
+      <%= link_to  '
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 align-middle"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+           Deleta todas as CNABS'.html_safe, cnabs_path, method: :delete, class: 'btn btn-danger'%>
+    <% end %>
+  </div>
+  
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Usuário</th>
+        <th>Tipo</th>
+        <th>Data da ocorrencia</th>
+        <th>Valor</th>
+        <th>Cpf</th>
+        <th>Cartão</th>
+        <th>Hora</th>
+        <th>Dono da loja</th>
+        <th>Nome da loja</th>
+        <th>Ultima transação</th>
+        <th>Balanço Total</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @cnabs.each do |cnab| %>
+      <tr>
+        <td><%= cnab.user.name.present? ?  cnab.user.name : cnab.user.email%></td>
+        <td><%= cnab.type_cnabs %></td>
+        <td><%= cnab.date_occurrence.strftime("%d/%m/%Y") %></td>
+        <td><%= number_to_currency_br(cnab.value) %></td>
+        <td><%= cnab.store.cpf %></td>
+        <td><%= cnab.card %></td>
+        <td><%= cnab.hours %></td>
+        <td><%= cnab.store.store_owner %></td>
+        <td><%= cnab.store.store_name %></td>
+        <td class='text-<%= transaction_color(cnab.deal.signal)%>'><%= cnab.deal.nature %></td>
+        <td class='text-<%= balance_color(cnab.store.balance_total)%>'><%= number_to_currency_br(cnab.store.balance_total) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

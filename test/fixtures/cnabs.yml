@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 1
+  date_occurrence: 2021-01-07
+  value: 9.99
+  cpf: MyString
+  card: 1
+  hours: MyString
+  store_owner: MyString
+  store_name: MyString
+  transactions: one
+
+two:
+  type: 1
+  date_occurrence: 2021-01-07
+  value: 9.99
+  cpf: MyString
+  card: 1
+  hours: MyString
+  store_owner: MyString
+  store_name: MyString
+  transactions: two

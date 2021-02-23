@@ -1,0 +1,28 @@
+<%= form_with(model: deal) do |form| %>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :"Tipo" %>
+      <%= form.number_field :type_transaction, class:'form-control' %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :"Descrição" %>
+      <%= form.text_field :description, class:'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :"Natureza" %>
+      <%= form.text_field :nature, class:'form-control' %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :"Sinal" %>
+      <%= form.text_field :signal, class:'form-control' %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.button 'Atualizar', class:'btn btn-success' %>
+  </div>
+<% end %>

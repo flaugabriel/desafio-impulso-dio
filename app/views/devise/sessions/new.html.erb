@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-body">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), class:'form-signin') do |f| %>
+    <h1 class="h3 mb-3 font-weight-normal">Desafio Back-End da Blu</h1>
+    <p class="text-left">Entrar</p>
+    <%= f.label :email, class:'sr-only' %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control' %>
+    <%= f.label :password, class:'sr-only' %>
+    <%= f.password_field :password, autocomplete: "senha", class:'form-control' %>
+
+    <% if devise_mapping.rememberable? %>
+    <div class="checkbox mb-3">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me, class:'remember-me' %>
+    </div>
+    <% end %>
+
+    <%= f.submit "Entrar", class:'btn btn-lg btn-primary btn-block' %>
+    <p class="mt-5 mb-3 text-muted">© 2020</p>
+    <%= render "devise/shared/links" %>
+    <%= link_to "Entre usando a conta do Google", '/users/auth/google_oauth2' %>
+    <% end %>
+    <p>Feito por <a href='https://www.linkedin.com/in/gabriel-flauzino-484927b8/' target="_blank">Gabriel Flauzino Mota</a></p>
+  </div>
+</div>

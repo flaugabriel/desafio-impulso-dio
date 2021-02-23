@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: 172.17.0.1
+  port: 5432
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: root
+
+development:
+  <<: *default
+  database: desafio_back_end_development
+
+test:
+  <<: *default
+  database: desafio_back_end_test
+  
+production:
+  <<: *default
+  database: desafio_back_end_production

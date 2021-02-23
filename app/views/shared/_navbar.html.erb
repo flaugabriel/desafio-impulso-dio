@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand navbar-light navbar-bg">
+  <div class="navbar-collapse collapse">
+    <ul class="navbar-nav navbar-align">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
+           <% if current_user.avatar.present? %>
+          <img src="<%= current_user.avatar %>" class="avatar img-fluid rounded mr-1" alt="Charles Hall"> <span class="text-dark"><%= current_user.full_name %></span> 
+        <% else %>
+          <span class="text-dark"><%= current_user.email %></span> 
+        <% end %>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="/users/edit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user align-middle mr-1">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg> Profile</a>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Sair", destroy_user_session_path, method: :delete, class:'dropdown-item'%>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
